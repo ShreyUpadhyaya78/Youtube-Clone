@@ -1,28 +1,19 @@
+"""Unit test to check whether the return form get_coordinate_info is float or not
+"""
 import unittest
-from unittest.mock import patch, call
-from io import StringIO
+from weather_module import get_coordinate_info
 
-# Functions imported
-from coordinates_module import get_general_weather_info_now, get_coordinate_info, get_weather_forecast_info
+class TestFloatCheck(unittest.TestCase):
+    def test_float_variable(self):
+        #Get result from the function call
+        latitude,longitude = get_coordinate_info('Kathmandu','np')
+        #Check the type and assert the result
+        expected_type='<class \'float\'>'
+        received_type_latitude=str(type(latitude))
+        received_type_longitude=str(type(longitude))
+        #Checks between received and expected type
+        self.assertEquals(received_type_latitude,expected_type)
+        self.assertEquals(received_type_longitude,expected_type)
 
-class TestWeatherFunctions(unittest.TestCase):
-
-    @patch('builtins.input', side_effect=['London', 'GB'])
-    def test_get_general_weather_info_now(self, mock_input):
-        # Capture the print statements
-        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
-            get_general_weather_info_now('London', 'GB')
-            output = mock_stdout.getvalue()
-
-        # Assertions
-        self.assertIn('Temperature in London:', output)
-        self.assertIn('Humidity in London:', output)
-
-    @patch('builtins.input', side_effect=['London', 'GB'])
-    def test_get_coordinate_info(self, mock_input):
-        latitude, longitude = get_coordinate_info('London', 'GB')
-        self.assertIsInstance(latitude, str)
-        self.assertIsInstance(longitude, str)
-    
 if __name__ == '__main__':
     unittest.main()
