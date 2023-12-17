@@ -1,3 +1,5 @@
+// import jsonData from '../assets/data/videosDB.json';
+
 //Recent Search Modal
 document.addEventListener('DOMContentLoaded', function () {
   //Get the ids
@@ -205,25 +207,25 @@ function closePopup() {
   document.getElementById('popupOverlay').style.display = 'none';
 }
 function checkInput() {
-      // Enable or disable the commentBtn based on input field value
-      var commentInput = document.getElementById("commentInput");
-      var commentBtn = document.getElementById("commentBtn");
-      commentBtn.disabled = commentInput.value.trim() === ""; // Disable if empty or only whitespace
-    }
+  // Enable or disable the commentBtn based on input field value
+  var commentInput = document.getElementById('commentInput');
+  var commentBtn = document.getElementById('commentBtn');
+  commentBtn.disabled = commentInput.value.trim() === ''; // Disable if empty or only whitespace
+}
 
-    function addComment() {
-      // Get the comment text from the input field
-      var commentText = document.getElementById("commentInput").value;
+function addComment() {
+  // Get the comment text from the input field
+  var commentText = document.getElementById('commentInput').value;
 
-      // Check if the input is not empty
-      if (commentText.trim() !== "") {
-        // Create a new comment article element
-        var newComment = document.createElement("article");
-        newComment.className = "individual-comment";
-        newComment.id = "newComment";
+  // Check if the input is not empty
+  if (commentText.trim() !== '') {
+    // Create a new comment article element
+    var newComment = document.createElement('article');
+    newComment.className = 'individual-comment';
+    newComment.id = 'newComment';
 
-        // Construct the HTML for the new comment
-        newComment.innerHTML = `
+    // Construct the HTML for the new comment
+    newComment.innerHTML = `
           <div class="commenter-icon">
             <a href="#"><img src="assets/images/Main-Commenter-Profile.jpg" alt="Commenter icon" class="commenter-icon-img"/></a>
           </div>
@@ -251,25 +253,25 @@ function checkInput() {
           </div>
         `;
 
-        // Add the new comment to the beginning of the comments display area
-        var commentsDisplay = document.getElementById("commentsDisplay");
-        commentsDisplay.insertBefore(newComment, commentsDisplay.firstChild);
+    // Add the new comment to the beginning of the comments display area
+    var commentsDisplay = document.getElementById('commentsDisplay');
+    commentsDisplay.insertBefore(newComment, commentsDisplay.firstChild);
 
-        // Clear the input field after adding the comment
-        document.getElementById("commentInput").value = "";
+    // Clear the input field after adding the comment
+    document.getElementById('commentInput').value = '';
 
-        // Disable the commentBtn after adding a comment
-        document.getElementById("commentBtn").disabled = true;
-      }
-    }
+    // Disable the commentBtn after adding a comment
+    document.getElementById('commentBtn').disabled = true;
+  }
+}
 
-    function cancelComment() {
-      // Clear the input field
-      document.getElementById("commentInput").value = "";
+function cancelComment() {
+  // Clear the input field
+  document.getElementById('commentInput').value = '';
 
-      // Disable the commentBtn
-      document.getElementById("commentBtn").disabled = true;
-    }
+  // Disable the commentBtn
+  document.getElementById('commentBtn').disabled = true;
+}
 function toggleReplyPopup() {
   var replyPopup = document.getElementById('replyPopup');
 
@@ -281,34 +283,34 @@ function toggleReplyPopup() {
   }
 }
 
-    function toggleSortPopup() {
-      var sortPopup = document.getElementById("sortPopup");
-      var sortBtn = document.getElementById("sortBtn");
+function toggleSortPopup() {
+  var sortPopup = document.getElementById('sortPopup');
+  var sortBtn = document.getElementById('sortBtn');
 
-      // Toggle the display property of the sortPopup
-      if (sortPopup.style.display === "none" || sortPopup.style.display === "") {
-        sortPopup.style.display = "block";
+  // Toggle the display property of the sortPopup
+  if (sortPopup.style.display === 'none' || sortPopup.style.display === '') {
+    sortPopup.style.display = 'block';
 
-        // Add a click event listener to close the popup when clicking outside
-        document.addEventListener("click", closeSortPopupOutside);
-      } else {
-        sortPopup.style.display = "none";
-        
-        // Remove the click event listener when closing the popup
-        document.removeEventListener("click", closeSortPopupOutside);
-      }
-    }
+    // Add a click event listener to close the popup when clicking outside
+    document.addEventListener('click', closeSortPopupOutside);
+  } else {
+    sortPopup.style.display = 'none';
 
-    function closeSortPopupOutside(event) {
-      var sortPopup = document.getElementById("sortPopup");
-      var sortBtn = document.getElementById("sortBtn");
+    // Remove the click event listener when closing the popup
+    document.removeEventListener('click', closeSortPopupOutside);
+  }
+}
 
-      // Check if the click is outside the sortPopup and the sortBtn
-      if (!sortPopup.contains(event.target) && event.target !== sortBtn) {
-        sortPopup.style.display = "none";
-        document.removeEventListener("click", closeSortPopupOutside);
-      }
-    }
+function closeSortPopupOutside(event) {
+  var sortPopup = document.getElementById('sortPopup');
+  var sortBtn = document.getElementById('sortBtn');
+
+  // Check if the click is outside the sortPopup and the sortBtn
+  if (!sortPopup.contains(event.target) && event.target !== sortBtn) {
+    sortPopup.style.display = 'none';
+    document.removeEventListener('click', closeSortPopupOutside);
+  }
+}
 
 document.addEventListener('DOMContentLoaded', function () {
   const commentsDisplay = document.getElementById('commentsDisplay');
@@ -341,4 +343,209 @@ document.addEventListener('DOMContentLoaded', function () {
     commentsDisplay.innerHTML = ''; // Clear the current display
     originalOrder.forEach((comment) => commentsDisplay.appendChild(comment));
   });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const videoCardDisplay = document.getElementById('videoCardDisplay');
+  jsonData = [
+    {
+      id: 8,
+      videoTitle: "Jacob's Prayer",
+      duration: '1:35',
+      imgSrc:
+        'https://i.ytimg.com/vi/sw-XR-F6aXw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAR3SPShEQeSthdya_gHcQYTolvyg',
+      videoChannelName: 'Emile Mosseri',
+      videoViews: '144K views',
+      videoUploadTime: '2 years ago',
+      category: 'Emile',
+      urlData: 'https://www.youtube.com/watch?v=sw-XR-F6aXw',
+      iframeData:
+        '<iframe width="853" height="480" src="https://www.youtube.com/watch?v=sw-XR-F6aXw" title="Jacob\'s Prayer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+    },
+    {
+      id: 2,
+      videoTitle: 'My Greedy Heart',
+      duration: '3:19',
+      imgSrc:
+        'https://i.ytimg.com/vi/WoaUVyE_eZA/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBjEUwqisn-hoRhF8QoNEQ5UB8CvA',
+      videoChannelName: 'Emile Mosseri',
+      videoViews: '9.2K views',
+      videoUploadTime: '7 months ago',
+      category: 'Emile',
+      urlData: 'https://www.youtube.com/watch?v=WoaUVyE_eZA',
+      iframeData:
+        '<iframe width="853" height="480" src="https://www.youtube.com/watch?v=WoaUVyE_eZA" title="My Greedy Heart" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+    },
+    {
+      id: 7,
+      videoTitle: 'Bombing California St.',
+      duration: '1:32',
+      imgSrc:
+        'https://i.ytimg.com/vi/AI9L5N1DCyg/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCqgivftjaVUutCatu9m8Gm3ov78g',
+      videoChannelName: 'Emile Mosseri',
+      videoViews: '40K views',
+      videoUploadTime: '4 years ago',
+      category: 'Emile',
+      urlData: 'https://www.youtube.com/watch?v=AI9L5N1DCyg',
+      iframeData:
+        '<iframe width="853" height="480" src="https://www.youtube.com/watch?v=AI9L5N1DCyg" title="Bombing California St." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+    },
+    {
+      id: 1,
+      videoTitle: 'Can You Hear The Music',
+      duration: '1:50',
+      imgSrc:
+        'https://i.ytimg.com/vi/4JZ-o3iAJv4/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB8DD0WpqRJ-mfsUOOu-FxaHXfhRA',
+      videoChannelName: 'Ludwig Goransson',
+      videoViews: '15M views',
+      videoUploadTime: '4 months ago',
+      category: 'Related',
+      urlData: 'https://www.youtube.com/watch?v=4JZ-o3iAJv4',
+      iframeData:
+        '<iframe width="853" height="480" src="https://www.youtube.com/watch?v=4JZ-o3iAJv4" title="Can You Hear The Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+    },
+    {
+      id: 6,
+      videoTitle: 'Minari | Official Trailer HD | A24',
+      duration: '2:05',
+      imgSrc:
+        'https://i.ytimg.com/an_webp/KQ0gFidlro8/mqdefault_6s.webp?du=3000&sqp=CNfe-6sG&rs=AOn4CLBNNN7BEO-oWezdhdL0K0EL2xwpZw',
+      videoChannelName: 'A24',
+      videoViews: '6.7M views',
+      videoUploadTime: '3 years ago',
+      category: 'Related',
+      urlData: 'https://www.youtube.com/watch?v=KQ0gFidlro8',
+      iframeData:
+        '<iframe width="853" height="480" src="https://www.youtube.com/watch?v=KQ0gFidlro8" title="Minari | Official Trailer HD | A24" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+    },
+    {
+      id: 9,
+      videoTitle: 'green to blue',
+      duration: '3:09',
+      imgSrc:
+        'https://i.ytimg.com/vi/bl1MKt0-XJo/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLByuyrjs9kFqRxRTQIlw-jJ_n0anw',
+      videoChannelName: 'daniel.mp3 - Topic',
+      videoViews: '5.2M views',
+      videoUploadTime: '1 year ago',
+      category: 'Related',
+      urlData: 'https://www.youtube.com/watch?v=bl1MKt0-XJo',
+      iframeData:
+        '<iframe width="853" height="480" src="https://www.youtube.com/watch?v=bl1MKt0-XJo" title="green to blue" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+    },
+    {
+      id: 5,
+      videoTitle: 'Ghost - Mary On A Cross',
+      duration: '4:06',
+      imgSrc:
+        'https://i.ytimg.com/vi/8JMMjCyyznI/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDxExOXmV5jkvZfwPEdvSudx-L4eQ',
+      videoChannelName: 'LatinHype',
+      videoViews: '56M views',
+      videoUploadTime: '1 year ago',
+      category: 'Other',
+      urlData: 'https://www.youtube.com/watch?v=8JMMjCyyznI',
+      iframeData:
+        '<iframe width="853" height="480" src="https://www.youtube.com/embed/8JMMjCyyznI" title="Ghost - Mary On A Cross" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+    },
+    {
+      id: 4,
+      videoTitle: 'Euta Chhithi',
+      duration: '5:05',
+      imgSrc:
+        'https://i.ytimg.com/vi/fMIWsRvHiZY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCaQu34IYfrvxFVPmVUqUwWm2cwWw    ',
+      videoChannelName: 'The Axe - Topic',
+      videoViews: '456K views',
+      videoUploadTime: '8 months ago',
+      category: 'Other',
+      urlData: 'https://www.youtube.com/watch?v=fMIWsRvHiZY',
+      iframeData:
+        '<iframe width="853" height="480" src="https://www.youtube.com/embed/fMIWsRvHiZY" title="Euta Chhithi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+    },
+    {
+      id: 3,
+      videoTitle: 'La Caution - Thé à la Menthe - The Laser Dance Song',
+      duration: '4:14',
+      imgSrc:
+        'https://i.ytimg.com/vi/k4Xx0k_TVY0/hqdefault.jpg?sqp=-oaymwE1CKgBEF5IVfKriqkDKAgBFQAAiEIYAXABwAEG8AEB-AG-B4AC0AWKAgwIABABGH8gEygYMA8=&rs=AOn4CLDudZuz_Y7Y1ExDCxBsPBkm6GaHsg',
+      videoChannelName: 'lacaution',
+      videoViews: '14M views',
+      videoUploadTime: '9 years ago',
+      category: 'Other',
+      urlData: 'https://www.youtube.com/watch?v=k4Xx0k_TVY0',
+      iframeData:
+        '<iframe width="853" height="480" src="https://www.youtube.com/embed/k4Xx0k_TVY0" title="La Caution - Thé à la Menthe - The Laser Dance Song" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+    },
+  ];
+
+
+const mainVideoPlayerContainer = document.getElementById(
+  'mainVideoPlayerContainer'
+);
+const allCategoryBtn = document.getElementById('allCategory');
+const emileCategoryBtn = document.getElementById('emileCategory');
+const relatedCategoryBtn = document.getElementById('relatedCategory');
+
+// Function to replace the iframe in #mainVideoPlayerContainer
+function replaceIframe(iframeData) {
+  mainVideoPlayerContainer.innerHTML = iframeData;
+}
+
+// Function to display articles based on category
+function displayArticles(category) {
+  videoCardDisplay.innerHTML = ''; // Clear existing articles
+
+  // Filter articles based on category
+  const filteredArticles =
+    category === 'All'
+      ? jsonData
+      : jsonData.filter((video) => video.category === category);
+
+  // Create and append articles
+  filteredArticles.forEach((video) => {
+    const article = document.createElement('article');
+    article.className = 'video-container';
+    article.setAttribute('data-url', video.urlData);
+    article.setAttribute('data-category', video.category);
+
+    article.innerHTML = `
+        <a href="#" class="thumbnail" data-duration="${video.duration}">
+          <img src="${video.imgSrc}" alt="Thumbnail image" />
+        </a>
+        <div class="video-bottom-section">
+          <div class="video-details">
+            <a href="#" class="video-title">${video.videoTitle}</a>
+            <a href="#" class="video-channel-name">${video.videoChannelName}</a>
+            <div class="video-metadata">
+              <span class="video-views">${video.videoViews}</span>
+              •
+              <span class="video-upload-time">${video.videoUploadTime}</span>
+            </div>
+          </div>
+        </div>
+      `;
+
+    // Add click event listener to each article
+    article.addEventListener('click', function () {
+      // Update iframe based on the clicked article
+      replaceIframe(video.iframeData);
+    });
+
+    videoCardDisplay.appendChild(article);
+  });
+}
+
+// Add click event listeners to category buttons
+allCategoryBtn.addEventListener('click', function () {
+  displayArticles('All');
+});
+
+emileCategoryBtn.addEventListener('click', function () {
+  displayArticles('Emile');
+});
+
+relatedCategoryBtn.addEventListener('click', function () {
+  displayArticles('Related');
+});
+
+// Initial display of all articles
+displayArticles('All');
 });
