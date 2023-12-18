@@ -10,6 +10,7 @@ body {
 .video-card-display {
   flex-direction: column;
   margin-top: -0.8rem;
+  margin-left:-.95rem ;
 }
 .video-card-display article {
   margin: 1rem;
@@ -157,6 +158,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  margin-top: -.6rem;
 }
 .search-container {
   margin-left: -13rem;
@@ -280,6 +282,37 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.upload-btn::before,.voice-search-btn::before,.search-btn::before,.notification-btn::before,.share-btn::before,.download-btn::before,.channel-name::before,.sort-by-btn::before{
+    content: attr(data-tooltip);
+    position: absolute;
+    z-index: 2;
+    margin-top: 5rem;
+    background-color: rgba(208, 206, 206,0.4);
+    width: max-content;
+    padding: .4rem;
+    border-radius: .3rem;
+    visibility: hidden;
+    text-align: center;
+}
+.upload-btn:hover::before,.voice-search-btn:hover::before,.search-btn:hover::before,.notification-btn:hover::before,.share-btn:hover::before,.download-btn:hover::before
+,.channel-name:hover::before,.sort-by-btn:hover::before{
+    visibility: visible;
+}
+.notification-btn::before{
+    margin-top: 2.5rem;
+}
+.share-btn:hover::before{
+    margin-top: -5.5rem;
+    padding: .2%;
+    height: max-content;
+}
+.download-btn:hover::before{
+    margin-top: -5.5rem;
+}
+.channel-name:hover::before{
+    font-size: 14px;
+    margin-top: -2.4rem;
 }
 .upload-video-popup {
   display: none;
@@ -515,6 +548,10 @@ iframe {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.video-title{
+    font-size: 18px;
+    font-weight: bolder;
 }
 .channel-name {
   margin-top: -1rem;

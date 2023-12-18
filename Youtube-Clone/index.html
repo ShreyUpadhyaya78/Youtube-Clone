@@ -17,7 +17,7 @@
       <a href="#">
         <img src="assets/images/menu.png" alt="menu-image" class="menu" />
       </a>
-      <a href="#">
+      <a href="#" title="YouTube Home">
         <img
           src="assets/images/logo.png"
           alt="Youtube Logo"
@@ -35,13 +35,13 @@
               id="searchInput"
               autocomplete="off"
             />
-            <button class="search-btn" type="submit">
+            <button class="search-btn" type="submit" data-tooltip="Search">
               <img src="assets/images/search.png" alt="Search Icon" />
             </button>
             <!-- <a href="#">
                 <img src="assets/images/mic.png" alt="Voice Search" class="mic">
             </a> -->
-            <button class="voice-search-btn">
+            <button class="voice-search-btn" data-tooltip="Search with your voice">
               <img src="assets/images/mic.png" alt="Mic image" />
             </button>
           </form>
@@ -195,7 +195,8 @@
       </div>
       <div class="menu-icons">
         <div class="upload-video-container">
-          <button class="upload-btn" id="uploadVideoBtn">
+          <button class="upload-btn"
+          data-tooltip="Create" id="uploadVideoBtn">
             <img src="assets/images/upload-menu.png" alt="Upload Video" />
           </button>
           <div class="upload-video-popup" id="uploadModal">
@@ -213,7 +214,7 @@
           </div>
         </div>
         <div class="notification-container">
-          <button class="notification-btn" id="notificationButton">
+          <button class="notification-btn" id="notificationButton" data-tooltip="Notifications">
             <img
               src="assets/images/notification-bell.png"
               alt="Notification Bell"
@@ -428,7 +429,7 @@
               />
             </a>
             <div class="channel-info">
-              <a href="#" class="channel-name"
+              <a href="#" class="channel-name" data-tooltip="Emile Mosseri"
                 ><h4>Emile Mosseri</h4>
                 <img
                   src="assets/images/dark-music.png"
@@ -446,18 +447,18 @@
           </div>
           <div class="like-share-download-save">
             <div class="like-dislike">
-              <button class="like-btn" id="likeBtn">
+              <button class="like-btn" id="likeBtn" title="I like this">
                 <img src="assets/images/like.png" alt="Like Button" /><span
                   id="likeCount"
                   >34</span
                 ><span id="likeCountUnit">K</span>
               </button>
-              <button class="dislike-btn" id="dislikeBtn">
+              <button class="dislike-btn" id="dislikeBtn" title="I dislike this">
                 <img src="assets/images/dislike.png" alt="Dislike Button" />
               </button>
             </div>
             <div class="share">
-              <button class="share-btn" id="shareBtn" onclick="openPopup()">
+              <button class="share-btn" id="shareBtn" onclick="openPopup()" data-tooltip="Share">
                 <img src="assets/images/share.png" alt="Share Button" /> Share
               </button>
               <div class="share-popup" id="sharePopup">
@@ -565,8 +566,8 @@
               </div>
               <div id="popupOverlay" onclick="closePopup()"></div>
             </div>
-            <div class="download">
-              <button class="download-btn">
+            <div class="download" >
+              <button class="download-btn" data-tooltip="Download">
                 <img
                   src="assets/images/download.png"
                   alt="Download Button"
@@ -606,7 +607,7 @@
               <button
                 class="sort-by-btn"
                 id="sortBtn"
-                onclick="toggleSortPopup()"
+                onclick="toggleSortPopup()"data-tooltip="Sort comments"
               >
                 <img src="assets/images/sort-by.png" alt="Sort By Button" />Sort
                 by
@@ -1106,11 +1107,11 @@
       </div>
       <div class="recommended-videos">
         <div class="categories">
-          <button class="category active" id="allCategory">All</button>
-          <button class="category" id="emileCategory">
+          <button class="category active" id="allCategory" title="All">All</button>
+          <button class="category" id="emileCategory" title="From Emile Mosseri-Topic">
             From Emile Mosseri-Topic
           </button>
-          <button class="category" id="relatedCategory">Related</button>
+          <button class="category" id="relatedCategory" title="Related">Related</button>
         </div>
         <div class="video-card-display" id="videoCardDisplay"></div>
       </div>
