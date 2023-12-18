@@ -16,6 +16,9 @@ body {
   margin: 1rem;
   cursor: pointer;
 }
+.video-card-display.video-title.docs-creator{
+    font-size: 14px;
+}
 .video-section {
   display: grid;
   grid-template-rows: repeat(auto-fill, minmax(168px, 94px, 1fr));
@@ -153,8 +156,22 @@ a.video-title.docs-creator{
   margin-right: 10rem;
   margin-left: -12rem;
 }
-.menu {
-  padding-right: 1rem;
+.main-menu-btn{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-width: 0;
+    border-radius: 50%;
+    transition: color 150ms;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: .6rem;
+}
+.main-menu-btn:hover{
+    background-color: #d0cece;
 }
 .header {
   display: flex;
@@ -162,6 +179,16 @@ a.video-title.docs-creator{
   align-items: center;
   padding: 1rem;
   margin-top: -.6rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  background-color: white;
+  height: 56px;
+  align-items: center;
+  align-content: center;
+  margin-top: 0rem;
+  z-index: 1;
 }
 .search-container {
   margin-left: -13rem;
@@ -330,7 +357,8 @@ a.video-title.docs-creator{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 .scroll-lock {
-  overflow: hidden;
+  overflow:hidden;
+  height: 100%;
 }
 
 .upload-video-btn,
@@ -508,6 +536,7 @@ a.video-title.docs-creator{
 .main-content {
   display: flex;
   flex-direction: row;
+  margin-top: 3.5rem;
 }
 .main-video {
   display: flex;
@@ -535,6 +564,7 @@ iframe {
   flex-direction: column;
   margin: 1rem;
   gap: 1rem;
+  position: relative;
 }
 .channel-details {
   display: flex;

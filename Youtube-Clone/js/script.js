@@ -1,5 +1,24 @@
 // import jsonData from '../assets/data/videosDB.json';
 
+function disableScroll() {
+  // Get the current page scroll position in the vertical direction
+  scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  // Get the current page scroll position in the horizontal direction
+
+  scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+  // if any scroll is attempted,
+  // set this to the previous value
+  window.onscroll = function () {
+    window.scrollTo(scrollLeft, scrollTop);
+  };
+}
+
+function enableScroll() {
+  window.onscroll = function () {};
+}
+
 //Recent Search Modal
 document.addEventListener('DOMContentLoaded', function () {
   //Get the ids
@@ -30,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
       uploadModal.style.display === 'block' ? 'none' : 'block';
     //When modal open lock the scroll
     document.body.classList.toggle('scroll-lock');
+    disableScroll();
   });
 
   //When clicked outside the modal
@@ -43,23 +63,25 @@ document.addEventListener('DOMContentLoaded', function () {
       uploadModal.style.display = 'none';
       //Scroll lock
       document.body.classList.remove('scroll-lock');
+      enableScroll();
     }
   });
 });
 
 //Notification Modal
 document.addEventListener('DOMContentLoaded', function () {
+
   //Get the ids
+  var bodyTag=document.getElementById('bodyTag');
   var notificationBtn = document.getElementById('notificationButton');
   var notificationModal = document.getElementById('notificationModal');
 
-  //Event listener for when uploadbtn is clicked
+  //Event listener for when notificationBtn is clicked
   notificationBtn.addEventListener('click', function () {
     //When style block; set to none and vice versa
     notificationModal.style.display =
       notificationModal.style.display === 'block' ? 'none' : 'block';
-    //When modal open lock the scroll
-    document.body.classList.toggle('scroll-lock');
+    bodyTag.style.overflow='hidden';
   });
 
   //When clicked outside the modal
@@ -72,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ) {
       notificationModal.style.display = 'none';
       //Scroll lock
-      document.body.classList.remove('scroll-lock');
+      bodyTag.style.overflow = 'scroll';
     }
   });
 });
@@ -289,7 +311,7 @@ function toggleReplyPopup() {
 function toggleSortPopup() {
   var sortPopup = document.getElementById('sortPopup');
   var sortBtn = document.getElementById('sortBtn');
-
+  var bodyTag = document.getElementById('bodyTag');
   // Toggle the display property of the sortPopup
   if (sortPopup.style.display === 'none' || sortPopup.style.display === '') {
     sortPopup.style.display = 'block';
@@ -298,7 +320,6 @@ function toggleSortPopup() {
     document.addEventListener('click', closeSortPopupOutside);
   } else {
     sortPopup.style.display = 'none';
-
     // Remove the click event listener when closing the popup
     document.removeEventListener('click', closeSortPopupOutside);
   }
@@ -307,10 +328,11 @@ function toggleSortPopup() {
 function closeSortPopupOutside(event) {
   var sortPopup = document.getElementById('sortPopup');
   var sortBtn = document.getElementById('sortBtn');
-
+  var bodyTag = document.getElementById('bodyTag');
   // Check if the click is outside the sortPopup and the sortBtn
   if (!sortPopup.contains(event.target) && event.target !== sortBtn) {
     sortPopup.style.display = 'none';
+    
     document.removeEventListener('click', closeSortPopupOutside);
   }
 }
