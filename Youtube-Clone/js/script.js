@@ -135,12 +135,13 @@ document.addEventListener('DOMContentLoaded', function () {
 function copyText() {
   var copyInput = document.getElementById('shareURLInput');
 
-  //Select from input field
+//Select from input field
   copyInput.select();
   copyInput.setSelectionRange(0, 99999);
 
-  //Use clipboard api to copy the text
+//Use clipboard api to copy the text
   try {
+    
     navigator.clipboard
       .writeText(copyInput.value)
       .then(() => {
@@ -153,7 +154,7 @@ function copyText() {
     console.error('Clipboard API not supported', err);
   }
 
-  //Deselect input field
+//Deselect input field
   copyInput.blur();
 }
 
@@ -314,7 +315,7 @@ function closeSortPopupOutside(event) {
   }
 }
 
-//Funtionality to sort comments
+//Funtionality to sort comments 
 document.addEventListener('DOMContentLoaded', function () {
   const commentsDisplay = document.getElementById('commentsDisplay');
   const newestFirstBtn = document.getElementById('newestFirstBtn');
@@ -325,7 +326,7 @@ document.addEventListener('DOMContentLoaded', function () {
   newestFirstBtn.addEventListener('click', function () {
     newestFirstBtn.style.backgroundColor = '#d0cece'; // Change background color
     topCommentsBtn.style.backgroundColor = '#ffffff';
-    //Sort the comments based on their timestamp using comparator function and querySelector
+//Sort the comments based on their timestamp using comparator function and querySelector
     const sortedComments = Array.from(commentsDisplay.children).sort((a, b) => {
       const timeA = parseInt(
         a.querySelector('.comment-time-number').textContent
@@ -352,6 +353,20 @@ document.addEventListener('DOMContentLoaded', function () {
   const videoCardDisplay = document.getElementById('videoCardDisplay');
   jsonData = [
     {
+      id: 10,
+      videoTitle: 'Mi Amor',
+      duration: '3:23',
+      imgSrc:
+        'https://i.ytimg.com/vi/UZ_JZaNQrAw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAlajQN7dMoek6K04zYbxpnjP8DVQ',
+      videoChannelName: 'Sharn - Topic',
+      videoViews: '45M views',
+      videoUploadTime: '7 months ago',
+      category: 'Other',
+      urlData: 'https://www.youtube.com/watch?v=UZ_JZaNQrAw',
+      iframeData:
+        '<iframe width="853" height="480" src="https://www.youtube.com/embed/UZ_JZaNQrAw" title="Mi Amor" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+    },
+    {
       id: 8,
       videoTitle: "Jacob's Prayer",
       duration: '1:35',
@@ -363,7 +378,7 @@ document.addEventListener('DOMContentLoaded', function () {
       category: 'Emile',
       urlData: 'https://www.youtube.com/watch?v=sw-XR-F6aXw',
       iframeData:
-        '<iframe width="853" height="480" src="https://www.youtube.com/watch?v=sw-XR-F6aXw" title="Jacob\'s Prayer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+        '<iframe width="853" height="480" src="https://www.youtube.com/embed/sw-XR-F6aXw" title="Jacob&#39;s Prayer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
     },
     {
       id: 2,
@@ -377,7 +392,7 @@ document.addEventListener('DOMContentLoaded', function () {
       category: 'Emile',
       urlData: 'https://www.youtube.com/watch?v=WoaUVyE_eZA',
       iframeData:
-        '<iframe width="853" height="480" src="https://www.youtube.com/watch?v=WoaUVyE_eZA" title="My Greedy Heart" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+        '<iframe width="853" height="480" src="https://www.youtube.com/embed/WoaUVyE_eZA" title="My Greedy Heart" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> ',
     },
     {
       id: 7,
@@ -391,7 +406,7 @@ document.addEventListener('DOMContentLoaded', function () {
       category: 'Emile',
       urlData: 'https://www.youtube.com/watch?v=AI9L5N1DCyg',
       iframeData:
-        '<iframe width="853" height="480" src="https://www.youtube.com/watch?v=AI9L5N1DCyg" title="Bombing California St." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+        '<iframe width="853" height="480" src="https://www.youtube.com/embed/AI9L5N1DCyg" title="Bombing California St." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
     },
     {
       id: 1,
@@ -405,21 +420,21 @@ document.addEventListener('DOMContentLoaded', function () {
       category: 'Related',
       urlData: 'https://www.youtube.com/watch?v=4JZ-o3iAJv4',
       iframeData:
-        '<iframe width="853" height="480" src="https://www.youtube.com/watch?v=4JZ-o3iAJv4" title="Can You Hear The Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+        '<iframe width="853" height="480" src="https://www.youtube.com/embed/4JZ-o3iAJv4" title="Can You Hear The Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
     },
     {
       id: 6,
       videoTitle: 'Minari | Official Trailer HD | A24',
       duration: '2:05',
       imgSrc:
-        'https://i.ytimg.com/an_webp/KQ0gFidlro8/mqdefault_6s.webp?du=3000&sqp=CNfe-6sG&rs=AOn4CLBNNN7BEO-oWezdhdL0K0EL2xwpZw',
+        'https://i.ytimg.com/vi/KQ0gFidlro8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBpZCCDCSsIQbEYuN0eT2znPNg1Cw',
       videoChannelName: 'A24',
       videoViews: '6.7M views',
       videoUploadTime: '3 years ago',
       category: 'Related',
       urlData: 'https://www.youtube.com/watch?v=KQ0gFidlro8',
       iframeData:
-        '<iframe width="853" height="480" src="https://www.youtube.com/watch?v=KQ0gFidlro8" title="Minari | Official Trailer HD | A24" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+        '<iframe width="853" height="480" src="https://www.youtube.com/embed/KQ0gFidlro8" title="Minari | Official Trailer HD | A24" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
     },
     {
       id: 9,
@@ -433,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function () {
       category: 'Related',
       urlData: 'https://www.youtube.com/watch?v=bl1MKt0-XJo',
       iframeData:
-        '<iframe width="853" height="480" src="https://www.youtube.com/watch?v=bl1MKt0-XJo" title="green to blue" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+        '<iframe width="853" height="480" src="https://www.youtube.com/embed/bl1MKt0-XJo" title="green to blue" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
     },
     {
       id: 5,
@@ -477,39 +492,83 @@ document.addEventListener('DOMContentLoaded', function () {
       iframeData:
         '<iframe width="853" height="480" src="https://www.youtube.com/embed/k4Xx0k_TVY0" title="La Caution - Thé à la Menthe - The Laser Dance Song" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
     },
+    {
+      id: 11,
+      videoTitle: 'Did I Stutter?',
+      duration: '2:05',
+      imgSrc:
+        'https://i.ytimg.com/vi/CuxrwuhhOl8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBvHnjoJuKDj_V6rKTgumd2_AO9nQ',
+      videoChannelName: 'beamglow - Topic',
+      videoViews: '2.8M views',
+      videoUploadTime: '1 year ago',
+      category: 'Other',
+      urlData: 'https://www.youtube.com/embed/CuxrwuhhOl8',
+      iframeData:
+        '<iframe width="853" height="480" src="https://www.youtube.com/embed/CuxrwuhhOl8" title="Did I Stutter?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+    },
+    {
+      id: 12,
+      videoTitle: 'Minari | The Beautiful Tragedy',
+      duration: '11:08',
+      imgSrc:
+        'https://i.ytimg.com/an_webp/TwHVtrOeBxE/mqdefault_6s.webp?du=3000&sqp=CM6s9asG&rs=AOn4CLAUXOfZnJ4xLC2kwZxl6192aTbDIA',
+      videoChannelName: 'Spikima Movies',
+      videoViews: '241K views',
+      videoUploadTime: '2 years ago',
+      category: 'Related',
+      urlData: 'https://www.youtube.com/watch?v=TwHVtrOeBxE',
+      iframeData:
+        '<iframe width="853" height="480" src="https://www.youtube.com/embed/TwHVtrOeBxE" title="Minari | The Beautiful Tragedy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+    },
+    {
+      id: 13,
+      videoTitle: 'MACHIAVELLI: Be the Wolf Among Sheep',
+      duration: '23:47',
+      imgSrc:
+        'https://i.ytimg.com/an_webp/dYRJmzYSTag/mqdefault_6s.webp?du=3000&sqp=CKDQ-qsG&rs=AOn4CLCr3dCLouxjebX5u-_E5iV5sAsLVQ',
+      videoChannelName: 'Horses',
+      videoViews: '1.4M views',
+      videoUploadTime: '9 months ago',
+      category: 'Other',
+      urlData: 'https://www.youtube.com/watch?v=dYRJmzYSTag',
+      iframeData:
+        '<iframe width="853" height="480" src="https://www.youtube.com/embed/dYRJmzYSTag" title="MACHIAVELLI: Be the Wolf Among Sheep" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+    },
   ];
 
-  const mainVideoPlayerContainer = document.getElementById(
-    'mainVideoPlayerContainer'
-  );
-  const allCategoryBtn = document.getElementById('allCategory');
-  const emileCategoryBtn = document.getElementById('emileCategory');
-  const relatedCategoryBtn = document.getElementById('relatedCategory');
 
-  // Function to replace the iframe in #mainVideoPlayerContainer
-  function replaceIframe(iframeData) {
-    mainVideoPlayerContainer.innerHTML = iframeData;
-  }
 
-  // Function to display articles based on category
-  function displayArticles(category) {
-    videoCardDisplay.innerHTML = ''; // Clear existing articles
+const mainVideoPlayerContainer = document.getElementById(
+  'mainVideoPlayerContainer'
+);
+const allCategoryBtn = document.getElementById('allCategory');
+const emileCategoryBtn = document.getElementById('emileCategory');
+const relatedCategoryBtn = document.getElementById('relatedCategory');
 
-    // Filter articles based on category
-    //When category all display all video cards
-    const filteredArticles =
-      category === 'All'
-        ? jsonData
-        : jsonData.filter((video) => video.category === category);
+// Function to replace the iframe in #mainVideoPlayerContainer
+function replaceIframe(iframeData) {
+  mainVideoPlayerContainer.innerHTML = iframeData;
+}
 
-    // Create and append articles
-    filteredArticles.forEach((video) => {
-      const article = document.createElement('article');
-      article.className = 'video-container';
-      article.setAttribute('data-url', video.urlData);
-      article.setAttribute('data-category', video.category);
+// Function to display articles based on category
+function displayArticles(category) {
+  videoCardDisplay.innerHTML = ''; // Clear existing articles
 
-      article.innerHTML = `
+  // Filter articles based on category
+  //When category all display all video cards
+  const filteredArticles =
+    category === 'All'
+      ? jsonData
+      : jsonData.filter((video) => video.category === category);
+
+  // Create and append articles
+  filteredArticles.forEach((video) => {
+    const article = document.createElement('article');
+    article.className = 'video-container';
+    article.setAttribute('data-url', video.urlData);
+    article.setAttribute('data-category', video.category);
+
+    article.innerHTML = `
         <a href="#" class="thumbnail" data-duration="${video.duration}">
           <img src="${video.imgSrc}" alt="Thumbnail image" />
         </a>
@@ -526,29 +585,29 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       `;
 
-      // Add click event listener to each article
-      article.addEventListener('click', function () {
-        // Update iframe based on the clicked article
-        replaceIframe(video.iframeData);
-      });
-
-      videoCardDisplay.appendChild(article);
+    // Add click event listener to each article
+    article.addEventListener('click', function () {
+      // Update iframe based on the clicked article
+      replaceIframe(video.iframeData);
     });
-  }
 
-  // Add click event listeners to category buttons
-  allCategoryBtn.addEventListener('click', function () {
-    displayArticles('All');
+    videoCardDisplay.appendChild(article);
   });
+}
 
-  emileCategoryBtn.addEventListener('click', function () {
-    displayArticles('Emile');
-  });
-
-  relatedCategoryBtn.addEventListener('click', function () {
-    displayArticles('Related');
-  });
-
-  // Initial display of all articles
+// Add click event listeners to category buttons
+allCategoryBtn.addEventListener('click', function () {
   displayArticles('All');
+});
+
+emileCategoryBtn.addEventListener('click', function () {
+  displayArticles('Emile');
+});
+
+relatedCategoryBtn.addEventListener('click', function () {
+  displayArticles('Related');
+});
+
+// Initial display of all articles
+displayArticles('All');
 });

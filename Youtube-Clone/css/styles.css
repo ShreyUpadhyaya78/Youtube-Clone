@@ -84,6 +84,9 @@ body {
   text-decoration: none;
   color: black;
 }
+a.video-title.docs-creator{
+    font-size: 14px;
+}
 .video-channel-name {
   margin-bottom: 0.1rem;
   text-decoration: none;
