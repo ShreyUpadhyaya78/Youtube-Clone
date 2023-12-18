@@ -1,0 +1,43 @@
+Task: Clone YouTube page (https://www.youtube.com/watch?v=PK35ulIX5P4)
+Assumption: You are logged into the app
+Folder Structure
+index.html: The main HTML file.
+css/: Folder for CSS files.
+js/: Folder for JavaScript files.
+assets/
+images/: Folder for images.
+fonts/: Folder for font files.
+data/: Folder for hard coded data for different section of app, ex: comments.json
+UI implementation
+The end result should be the exact clone of the video player page in youtube
+	Considerations
+Should be responsive
+Should have consistent coloring, fonts, etc
+Should incorporate UX elements (pointer on hover, clickable links, tooltips)
+Video player is not needed to look like Youtube’s player. Would be great if made so.
+Functionality required
+Headers
+Search section should be interactive, should display a dropdown with some hardcoded default search history, but no need to implement the actual search behaviour
+Upload new video section only interactive until the modal opens with menu items - clicking on menu items does nothing
+For notifications, have some default notifications and clicking on it opens a modal
+Video Player
+Video should be automatically played when landing on the page. Just like the actual site. Put hardcoded youtube link
+Include Player Controls like Play/Pause, Next (Modal displaying next recommended video thumbnail), Audio Control and Visual Controls like Cinema Mode/Default View, Full Screen toggles, Settings to only open modal with different menu items (leave it as unclickable for now, no further action on clicking any item in the menu)
+Recommended Videos
+When clicked on any one of the videos from the recommended videos section a new video should be played (hardcode the link)
+Add tag based filter on the recommended videos
+Like & Share
+Like & Dislike
+Should be able to like the video and the count should change upon liking the video
+Share
+Should open a modal with multiple options to share
+“Share in a post” only for visual purpose - not functional
+Share on any two social media platforms, more than two only for display purpose
+When clicking on any social media, it should open the corresponding app with prefilled default contents - the data are shared via url
+Say, if you choose to share implement share behaviour for Facebook and Twitter, others are left non-functional
+Section to Copy the original youtube url should be functional
+Comments Section
+Have an input to allow posting comments
+Display the list of some hard coded comments, but adding new comments should be displayed as well
+Sort comments (Top Comments & Newest First)
+Only display the replies to hardcoded comments (skip posting new replies)
