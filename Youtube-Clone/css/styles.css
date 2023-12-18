@@ -7,13 +7,13 @@
 body {
   margin: 0;
 }
-.video-card-display{
-    flex-direction: column;
-    margin-top: -.8rem;
+.video-card-display {
+  flex-direction: column;
+  margin-top: -0.8rem;
 }
-.video-card-display article{
-    margin: 1rem;
-    cursor: pointer ;
+.video-card-display article {
+  margin: 1rem;
+  cursor: pointer;
 }
 .video-section {
   display: grid;
@@ -114,7 +114,7 @@ body {
   margin-right: 0.7rem;
   word-wrap: none;
   white-space: nowrap;
-  border: 1px solid #ccc;
+  border: 0px;
   border-radius: 8px;
   background-color: #e7e7e7;
   padding: 0.5rem 1rem;
@@ -138,15 +138,16 @@ body {
   border-color: #eee;
   transition: color 150ms;
 }
-.category.active:hover{
-    background-color: #807f7f;
+.category.active:hover {
+  background-color: #807f7f;
 }
 .category:last-child {
   margin-right: 0;
 }
 .youtube-logo {
-  margin-left: -16rem;
   height: 20px;
+  margin-right: 10rem;
+  margin-left: -12rem;
 }
 .menu {
   padding-right: 1rem;
@@ -158,10 +159,10 @@ body {
   padding: 1rem;
 }
 .search-container {
-  margin-left: -15rem;
+  margin-left: -13rem;
 }
 .search-bar {
-  width: 530px;
+  width: 580px;
   display: flex;
   flex-grow: 1;
   margin: 0 2rem 0 4rem;
@@ -171,8 +172,8 @@ body {
   font-size: inherit;
   padding: 0.4rem;
   border: 1px solid #777;
-  border-top-left-radius: 16px;
-  border-bottom-left-radius: 16px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 .search-btn {
   display: flex;
@@ -182,17 +183,34 @@ body {
   background-color: #f8f8f8;
   border-left: none;
   cursor: pointer;
-  border-top-right-radius: 16px;
-  border-bottom-right-radius: 16px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .search-btn:hover {
   background-color: #f0f0f0;
 }
+.voice-search-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #d0cece;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-width: 0px;
+  transition: color 150ms;
+  margin-left: 1.5rem;
+}
+.voice-search-btn:hover {
+  background-color: #aaa;
+}
 .recent-search {
   display: none;
   flex-direction: column;
-  background-color: #d0cece;
+  background-color: white;
   color: #111;
   height: 390px;
   z-index: 2;
@@ -201,6 +219,7 @@ body {
   margin-left: 3.93rem;
   border-radius: 16px;
   margin-top: 0.2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .search-history,
@@ -222,7 +241,7 @@ body {
 }
 .search-history:hover,
 .search-history-first:hover {
-  background-color: #aaa;
+  background-color: #d0cece;
 }
 .individual-search-history {
   font-weight: bolder;
@@ -268,10 +287,11 @@ body {
   border-radius: 12px;
   width: 160px;
   height: 96px;
-  background-color: #d0cece;
+  background-color: white;
   flex-direction: column;
   position: absolute;
   margin-left: 0rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 .scroll-lock {
   overflow: hidden;
@@ -284,7 +304,7 @@ body {
   flex-direction: row;
   align-items: center;
   border-width: 0px;
-  background-color: #d0cece;
+  background-color: white;
   transition: color 150ms;
   cursor: pointer;
   margin-top: 9px;
@@ -302,7 +322,7 @@ body {
 }
 .upload-video-btn:hover,
 .go-live-btn:hover {
-  background-color: #aaa;
+  background-color: #d0cece;
 }
 .upload-video-btn img,
 .go-live-btn img {
@@ -326,20 +346,21 @@ body {
 }
 .upload-btn:hover,
 .notification-btn:hover {
-  background-color: #aaa;
+  background-color: #d0cece;
 }
 
 .notification-popup {
   display: none;
   z-index: 2;
   border-radius: 12px;
-  background-color: #d0cece;
+  background-color: white;
   flex-direction: column;
   position: absolute;
   margin-left: -30.03rem;
   margin-top: -2.19rem;
   height: 550px;
   width: 480px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 .notification-header {
   display: flex;
@@ -357,7 +378,7 @@ body {
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  background-color: #d0cece;
+  background-color: white;
   border-width: 0px;
   transition: color 150ms;
   align-items: center;
@@ -365,12 +386,12 @@ body {
   justify-content: center;
 }
 .notification-setting-btn:hover {
-  background-color: #aaa;
+  background-color: #d0cece;
 }
 .notification-header-separation-bar {
   width: 100%;
   height: 1px;
-  background-color: #777;
+  background-color: #aaa;
 }
 .notification-card-content {
   overflow-y: scroll;
@@ -382,20 +403,20 @@ body {
   display: flex;
   height: 118px;
   width: 480px;
-  background-color: #d0cece;
+  background-color: white;
   border-width: 0px;
   cursor: pointer;
   align-items: center;
   transition: color 150ms;
 }
 .notification-card-first-btn:hover {
-  background-color: #aaa;
+  background-color: #d0cece;
 }
 .notification-card-btn {
   display: flex;
   height: 118px;
   width: 480px;
-  background-color: #d0cece;
+  background-color: white;
   border-width: 0px;
   cursor: pointer;
   align-items: center;
@@ -403,7 +424,7 @@ body {
   transition: color 150ms;
 }
 .notification-card-btn:hover {
-  background-color: #aaa;
+  background-color: #d0cece;
 }
 .notification-dot {
   margin-right: 0.5rem;
@@ -467,7 +488,7 @@ body {
     align-items: center;
     align-content: center;
 } */
-iframe{
+iframe {
   /* margin-top: 1rem; */
   border-radius: 12px;
   width: 853px;
@@ -886,41 +907,41 @@ iframe{
   align-content: center;
   align-items: center;
 }
-.sort-popup{
-    display: none;
-    z-index: 2;
-    width: 128.17px;
-    height: 117px;
-    /* border: 1px solid #aaa; */
-    border-radius: 8px;
-    position: absolute;
-    margin-top: 10rem;
-    margin-left: 10.3rem;
-    background-color: white;
-    flex-direction: column;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+.sort-popup {
+  display: none;
+  z-index: 2;
+  width: 128.17px;
+  height: 117px;
+  /* border: 1px solid #aaa; */
+  border-radius: 8px;
+  position: absolute;
+  margin-top: 10rem;
+  margin-left: 10.3rem;
+  background-color: white;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-.sort-popup button{
-    width: 100%;
-    height: 48px;
-    border-width: 0;
-    font-size: 14px;
-    font-weight: 400;
+.sort-popup button {
+  width: 100%;
+  height: 48px;
+  border-width: 0;
+  font-size: 14px;
+  font-weight: 400;
 }
-.top-comments-btn{
-    margin-top: .6rem;
-    background-color: #d0cece;
-    transition: color 150ms;
+.top-comments-btn {
+  margin-top: 0.6rem;
+  background-color: #d0cece;
+  transition: color 150ms;
 }
-.top-comments-btn:hover{
-    background-color: #aaa;
+.top-comments-btn:hover {
+  background-color: #aaa;
 }
-.newest-first-btn{
-    background-color: white;
-    transition: color 150ms;
+.newest-first-btn {
+  background-color: white;
+  transition: color 150ms;
 }
-.newest-first-btn:hover{
-    background-color: #d0cece;
+.newest-first-btn:hover {
+  background-color: #d0cece;
 }
 .post-comment-area {
   display: flex;
@@ -1016,14 +1037,14 @@ iframe{
   background-color: #aaa;
   color: #111;
 }
-.comment-btn:disabled:hover{
-    background-color:  #aaa;
-    cursor: default;
+.comment-btn:disabled:hover {
+  background-color: #aaa;
+  cursor: default;
 }
-.comment-btn{
-    background-color: #007bff;
-    color: white;
-    margin-top: 0.4rem;
+.comment-btn {
+  background-color: #007bff;
+  color: white;
+  margin-top: 0.4rem;
   padding: 0 16px;
   width: 92.11px;
   height: 36px;
@@ -1040,9 +1061,9 @@ iframe{
   align-content: center;
   justify-content: center;
 }
-.comment-btn:hover{
-    background-color: #3ea6ff;
-    cursor: pointer;
+.comment-btn:hover {
+  background-color: #3ea6ff;
+  cursor: pointer;
 }
 .display-comments {
   margin-top: 1.5rem;
@@ -1056,7 +1077,7 @@ iframe{
 .individual-comment {
   display: flex;
   flex-direction: row;
-  margin-bottom: .7rem;
+  margin-bottom: 0.7rem;
 }
 .commenter-icon-img {
   border-radius: 50%;
@@ -1168,7 +1189,7 @@ iframe{
   background-color: #aaa;
 }
 .replies {
-    margin-bottom: -.5rem;
+  margin-bottom: -0.5rem;
 }
 .more-replies-btn {
   display: flex;
@@ -1193,16 +1214,16 @@ iframe{
 .reply-dropdown-img {
   margin-right: 0.5rem;
 }
-.reply-popup{
-    position: relative;
-    display: flex;
-    flex-direction: column; 
+.reply-popup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
-#replyPopup{
-    display: none;
+#replyPopup {
+  display: none;
 }
 .individual-reply {
   display: flex;
   flex-direction: row;
-  margin-bottom: .4rem;
+  margin-bottom: 0.4rem;
 }

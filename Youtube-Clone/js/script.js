@@ -133,15 +133,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //Copy URL function
 function copyText() {
-  /* Get the input field */
   var copyInput = document.getElementById('shareURLInput');
 
-  /* Select the text field */
+  //Select from input field
   copyInput.select();
-  copyInput.setSelectionRange(0, 99999); /* For mobile devices */
+  copyInput.setSelectionRange(0, 99999);
 
+  //Use clipboard api to copy the text
   try {
-    /* Copy the text inside the text field using the Clipboard API */
     navigator.clipboard
       .writeText(copyInput.value)
       .then(() => {
@@ -154,13 +153,11 @@ function copyText() {
     console.error('Clipboard API not supported', err);
   }
 
-  /* Deselect the input field */
+  //Deselect input field
   copyInput.blur();
 }
-function toggleCheckbox() {
-  var checkbox = document.getElementById('customCheckbox');
-  checkbox.classList.toggle('checked');
-}
+
+//WhatsApp share button function
 function launchWhatsApp() {
   // Get the input value
   var inputValue = document.getElementById('shareURLInput').value;
@@ -172,6 +169,7 @@ function launchWhatsApp() {
   // Open the URL in a new tab
   window.open(whatsappURL, '_blank');
 }
+//Facebook share button function
 function launchFacebook() {
   // Get the input value
   var inputValue = document.getElementById('shareURLInput').value;
@@ -184,6 +182,7 @@ function launchFacebook() {
   // Open the URL in a new tab
   window.open(facebookURL, '_blank');
 }
+//Twitter share button function
 function launchTwitter() {
   // Get the input value
   var inputValue = document.getElementById('shareURLInput').value;
@@ -195,24 +194,26 @@ function launchTwitter() {
   // Open the URL in a new tab
   window.open(twitterURL, '_blank');
 }
+
+//Functions to toggle share popup
 function openPopup() {
   // Show the popup and overlay
   document.getElementById('sharePopup').style.display = 'block';
   document.getElementById('popupOverlay').style.display = 'block';
 }
-
 function closePopup() {
   // Hide the popup and overlay
   document.getElementById('sharePopup').style.display = 'none';
   document.getElementById('popupOverlay').style.display = 'none';
 }
+//Function to diable comment btn if input field is empty
 function checkInput() {
   // Enable or disable the commentBtn based on input field value
   var commentInput = document.getElementById('commentInput');
   var commentBtn = document.getElementById('commentBtn');
   commentBtn.disabled = commentInput.value.trim() === ''; // Disable if empty or only whitespace
 }
-
+//Function to add new comment when comment btn is pressed
 function addComment() {
   // Get the comment text from the input field
   var commentText = document.getElementById('commentInput').value;
@@ -264,7 +265,7 @@ function addComment() {
     document.getElementById('commentBtn').disabled = true;
   }
 }
-
+//Clear the input field and disable comment btn when cancel btn pressed
 function cancelComment() {
   // Clear the input field
   document.getElementById('commentInput').value = '';
@@ -272,6 +273,7 @@ function cancelComment() {
   // Disable the commentBtn
   document.getElementById('commentBtn').disabled = true;
 }
+//Function to toggle reply popup
 function toggleReplyPopup() {
   var replyPopup = document.getElementById('replyPopup');
 
@@ -282,7 +284,7 @@ function toggleReplyPopup() {
     replyPopup.style.display = 'none';
   }
 }
-
+//Function to toggle sort popup
 function toggleSortPopup() {
   var sortPopup = document.getElementById('sortPopup');
   var sortBtn = document.getElementById('sortBtn');
@@ -300,7 +302,7 @@ function toggleSortPopup() {
     document.removeEventListener('click', closeSortPopupOutside);
   }
 }
-
+//Function to close sort popup when clicked outside of it
 function closeSortPopupOutside(event) {
   var sortPopup = document.getElementById('sortPopup');
   var sortBtn = document.getElementById('sortBtn');
@@ -312,6 +314,7 @@ function closeSortPopupOutside(event) {
   }
 }
 
+//Funtionality to sort comments
 document.addEventListener('DOMContentLoaded', function () {
   const commentsDisplay = document.getElementById('commentsDisplay');
   const newestFirstBtn = document.getElementById('newestFirstBtn');
@@ -322,7 +325,7 @@ document.addEventListener('DOMContentLoaded', function () {
   newestFirstBtn.addEventListener('click', function () {
     newestFirstBtn.style.backgroundColor = '#d0cece'; // Change background color
     topCommentsBtn.style.backgroundColor = '#ffffff';
-
+    //Sort the comments based on their timestamp using comparator function and querySelector
     const sortedComments = Array.from(commentsDisplay.children).sort((a, b) => {
       const timeA = parseInt(
         a.querySelector('.comment-time-number').textContent
@@ -333,18 +336,18 @@ document.addEventListener('DOMContentLoaded', function () {
       return timeA - timeB;
     });
 
-    commentsDisplay.innerHTML = ''; // Clear the current display
+    // commentsDisplay.innerHTML = ''; // Clear the current display
     sortedComments.forEach((comment) => commentsDisplay.appendChild(comment));
   });
 
   topCommentsBtn.addEventListener('click', function () {
     newestFirstBtn.style.backgroundColor = '#ffffff'; // Reset background color
     topCommentsBtn.style.backgroundColor = '#d0cece';
-    commentsDisplay.innerHTML = ''; // Clear the current display
+    // commentsDisplay.innerHTML = ''; // Clear the current display
     originalOrder.forEach((comment) => commentsDisplay.appendChild(comment));
   });
 });
-
+//Functionality to create recommended videos section from jsonData
 document.addEventListener('DOMContentLoaded', function () {
   const videoCardDisplay = document.getElementById('videoCardDisplay');
   jsonData = [
@@ -476,37 +479,37 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   ];
 
+  const mainVideoPlayerContainer = document.getElementById(
+    'mainVideoPlayerContainer'
+  );
+  const allCategoryBtn = document.getElementById('allCategory');
+  const emileCategoryBtn = document.getElementById('emileCategory');
+  const relatedCategoryBtn = document.getElementById('relatedCategory');
 
-const mainVideoPlayerContainer = document.getElementById(
-  'mainVideoPlayerContainer'
-);
-const allCategoryBtn = document.getElementById('allCategory');
-const emileCategoryBtn = document.getElementById('emileCategory');
-const relatedCategoryBtn = document.getElementById('relatedCategory');
+  // Function to replace the iframe in #mainVideoPlayerContainer
+  function replaceIframe(iframeData) {
+    mainVideoPlayerContainer.innerHTML = iframeData;
+  }
 
-// Function to replace the iframe in #mainVideoPlayerContainer
-function replaceIframe(iframeData) {
-  mainVideoPlayerContainer.innerHTML = iframeData;
-}
+  // Function to display articles based on category
+  function displayArticles(category) {
+    videoCardDisplay.innerHTML = ''; // Clear existing articles
 
-// Function to display articles based on category
-function displayArticles(category) {
-  videoCardDisplay.innerHTML = ''; // Clear existing articles
+    // Filter articles based on category
+    //When category all display all video cards
+    const filteredArticles =
+      category === 'All'
+        ? jsonData
+        : jsonData.filter((video) => video.category === category);
 
-  // Filter articles based on category
-  const filteredArticles =
-    category === 'All'
-      ? jsonData
-      : jsonData.filter((video) => video.category === category);
+    // Create and append articles
+    filteredArticles.forEach((video) => {
+      const article = document.createElement('article');
+      article.className = 'video-container';
+      article.setAttribute('data-url', video.urlData);
+      article.setAttribute('data-category', video.category);
 
-  // Create and append articles
-  filteredArticles.forEach((video) => {
-    const article = document.createElement('article');
-    article.className = 'video-container';
-    article.setAttribute('data-url', video.urlData);
-    article.setAttribute('data-category', video.category);
-
-    article.innerHTML = `
+      article.innerHTML = `
         <a href="#" class="thumbnail" data-duration="${video.duration}">
           <img src="${video.imgSrc}" alt="Thumbnail image" />
         </a>
@@ -523,29 +526,29 @@ function displayArticles(category) {
         </div>
       `;
 
-    // Add click event listener to each article
-    article.addEventListener('click', function () {
-      // Update iframe based on the clicked article
-      replaceIframe(video.iframeData);
+      // Add click event listener to each article
+      article.addEventListener('click', function () {
+        // Update iframe based on the clicked article
+        replaceIframe(video.iframeData);
+      });
+
+      videoCardDisplay.appendChild(article);
     });
+  }
 
-    videoCardDisplay.appendChild(article);
+  // Add click event listeners to category buttons
+  allCategoryBtn.addEventListener('click', function () {
+    displayArticles('All');
   });
-}
 
-// Add click event listeners to category buttons
-allCategoryBtn.addEventListener('click', function () {
+  emileCategoryBtn.addEventListener('click', function () {
+    displayArticles('Emile');
+  });
+
+  relatedCategoryBtn.addEventListener('click', function () {
+    displayArticles('Related');
+  });
+
+  // Initial display of all articles
   displayArticles('All');
-});
-
-emileCategoryBtn.addEventListener('click', function () {
-  displayArticles('Emile');
-});
-
-relatedCategoryBtn.addEventListener('click', function () {
-  displayArticles('Related');
-});
-
-// Initial display of all articles
-displayArticles('All');
 });

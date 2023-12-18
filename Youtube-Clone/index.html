@@ -41,6 +41,9 @@
             <!-- <a href="#">
                 <img src="assets/images/mic.png" alt="Voice Search" class="mic">
             </a> -->
+            <button class="voice-search-btn">
+              <img src="assets/images/mic.png" alt="Mic image" />
+            </button>
           </form>
         </div>
         <div class="recent-search" id="recentSearchDiv">
@@ -409,7 +412,7 @@
             title="Jacob and the Stone"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen 
+            allowfullscreen
           ></iframe>
         </div>
         <div class="video-title">
@@ -460,7 +463,11 @@
               <div class="share-popup" id="sharePopup">
                 <div class="share-header">
                   <span>Share</span>
-                  <button class="share-close-btn" id="shareCloseBtn" onclick="closePopup()">
+                  <button
+                    class="share-close-btn"
+                    id="shareCloseBtn"
+                    onclick="closePopup()"
+                  >
                     <img src="assets/images/Close.png" alt="Close Button" />
                   </button>
                 </div>
@@ -474,8 +481,11 @@
                     />
                     <span>Embed</span>
                   </button>
-                  <button class="media-btn" id="fbBtn"
-                  onclick="launchFacebook()">
+                  <button
+                    class="media-btn"
+                    id="fbBtn"
+                    onclick="launchFacebook()"
+                  >
                     <img
                       src="assets/images/fb.png"
                       alt="Facebook Button"
@@ -484,8 +494,7 @@
                     />
                     <span>Facebook</span>
                   </button>
-                  <button class="media-btn" id="xBtn"
-                  onclick="launchTwitter()">
+                  <button class="media-btn" id="xBtn" onclick="launchTwitter()">
                     <img
                       src="assets/images/x.png"
                       alt="X Button"
@@ -494,7 +503,11 @@
                     />
                     <span>X</span>
                   </button>
-                  <button class="media-btn" id="whatsappBtn" onclick="launchWhatsApp()">
+                  <button
+                    class="media-btn"
+                    id="whatsappBtn"
+                    onclick="launchWhatsApp()"
+                  >
                     <img
                       src="assets/images/whatsapp.png"
                       alt="Whatsapp Button"
@@ -503,7 +516,7 @@
                     />
                     <span>WhatsApp</span>
                   </button>
-                  <button class="media-btn" id="emailBtn" >
+                  <button class="media-btn" id="emailBtn">
                     <img
                       src="assets/images/email.png"
                       alt="Email Button"
@@ -539,9 +552,15 @@
                 </div>
                 <div class="share-url-separator"></div>
                 <div class="checkbox-container">
-      <input type="checkbox" id="customCheckbox" class="square-checkbox">
-      
-    <label for="customCheckbox" class="checkbox-label">Start at <span>0:03</span></label>
+                  <input
+                    type="checkbox"
+                    id="customCheckbox"
+                    class="square-checkbox"
+                  />
+
+                  <label for="customCheckbox" class="checkbox-label"
+                    >Start at <span>0:03</span></label
+                  >
                 </div>
               </div>
               <div id="popupOverlay" onclick="closePopup()"></div>
@@ -584,13 +603,21 @@
               <div class="comment-count">
                 <h3>414 Comments</h3>
               </div>
-              <button class="sort-by-btn" id="sortBtn" onclick="toggleSortPopup()">
+              <button
+                class="sort-by-btn"
+                id="sortBtn"
+                onclick="toggleSortPopup()"
+              >
                 <img src="assets/images/sort-by.png" alt="Sort By Button" />Sort
                 by
               </button>
               <div class="sort-popup" id="sortPopup">
-                <button class="top-comments-btn" id="topCommentsBtn">Top comments</button>
-                <button class="newest-first-btn" id="newestFirstBtn">Newest first</button>
+                <button class="top-comments-btn" id="topCommentsBtn">
+                  Top comments
+                </button>
+                <button class="newest-first-btn" id="newestFirstBtn">
+                  Newest first
+                </button>
               </div>
             </div>
           </div>
@@ -606,18 +633,33 @@
               <input
                 type="text"
                 placeholder="Add a comment..."
-                class="comment-input-box" id="commentInput" oninput="checkInput()"
+                class="comment-input-box"
+                id="commentInput"
+                oninput="checkInput()"
               />
               <div class="buttons-for-comment">
                 <button class="emoji-btn">
                   <img src="assets/images/emoji.png" alt="Emoji Input Button" />
                 </button>
                 <div class="cancel-comment">
-                  <button class="cancel-btn" id="commentCancelBtn" onclick="cancelComment()">Cancel</button>
-                  <button class="comment-btn" id="commentBtn" onclick="addComment()" disabled>Comment</button>
+                  <button
+                    class="cancel-btn"
+                    id="commentCancelBtn"
+                    onclick="cancelComment()"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    class="comment-btn"
+                    id="commentBtn"
+                    onclick="addComment()"
+                    disabled
+                  >
+                    Comment
+                  </button>
                 </div>
               </div>
-            </div>  
+            </div>
           </div>
           <div class="display-comments" id="commentsDisplay">
             <article class="individual-comment" id="comment1">
@@ -627,17 +669,24 @@
                     src="https://yt3.ggpht.com/ytc/AIf8zZSvK2PG0no1UmcLF43uR-I9JvddsbS28Dh0KFXl=s48-c-k-c0x00ffffff-no-rj"
                     alt="Commenter icon"
                     class="commenter-icon-img"
-                /></a>  
-              </div>    
+                /></a>
+              </div>
               <div class="individual-comment-metadata">
                 <div class="username-comment-time">
                   <a href="#" class="username-comment-time-link">
                     <span class="username"> @inventorsam </span>
-                    <span class="comment-time"> <span class="comment-time-number">11</span> months ago (edited)</span>
+                    <span class="comment-time">
+                      <span class="comment-time-number">11</span> months ago
+                      (edited)</span
+                    >
                   </a>
                 </div>
                 <div class="comment-text">
-                  This song feels like after a long, hard fought battle which you have been wounded in, you lay there alone, but at peace, with yourself and the everything, watching the sunset, hearing the leaves rustle gently, one final time before closing your eyes…
+                  This song feels like after a long, hard fought battle which
+                  you have been wounded in, you lay there alone, but at peace,
+                  with yourself and the everything, watching the sunset, hearing
+                  the leaves rustle gently, one final time before closing your
+                  eyes…
                 </div>
                 <div class="like-dislike-reply">
                   <div class="comment-like-and-counter">
@@ -658,7 +707,11 @@
                   <button class="comment-reply-btn">Reply</button>
                 </div>
                 <div class="replies" id="repliesContainer">
-                  <button class="more-replies-btn" id="moreRepliesBtn" onclick="toggleReplyPopup()">
+                  <button
+                    class="more-replies-btn"
+                    id="moreRepliesBtn"
+                    onclick="toggleReplyPopup()"
+                  >
                     <img
                       src="assets/images/reply-dropdown.png"
                       alt="Reply dropdown Image"
@@ -668,157 +721,167 @@
                   </button>
                   <div class="reply-popup" id="replyPopup">
                     <article class="individual-reply">
-              <div class="commenter-icon">
-                <a href="#"
-                  ><img
-                    src="https://yt3.ggpht.com/ytc/AIf8zZSRGGRwD08jHCtVVpDtaMMVs2K1LyK_Ud_OLRg6Xw=s48-c-k-c0x00ffffff-no-rj"
-                    class="commenter-icon-img" width="24px" height="24px"
-                /></a>
-              </div>
-              <div class="individual-comment-metadata">
-                <div class="username-comment-time">
-                  <a href="#" class="username-comment-time-link">
-                    <span class="username"> @Revanchistus </span>
-                    <span class="comment-time"> 3 months ago </span>
-                  </a>
-                </div>
-                <div class="comment-text">
-                  Perfect capture of my emotion❤
-                </div>
-                <div class="like-dislike-reply">
-                  <div class="comment-like-and-counter">
-                    <button class="comment-like-btn">
-                      <img
-                        src="assets/images/like.png"
-                        alt="Comment Like Button"
-                      />
-                    </button>
-                    <span class="comment-like-counter"> 13</span>
-                  </div>
-                  <button class="comment-dislike-btn">
-                    <img
-                      src="assets/images/dislike.png"
-                      alt="Comment Dislike Button"
-                    />
-                  </button>
-                  <button class="comment-reply-btn">Reply</button>
-                </div>
-              </div>
-            </article>
-            <article class="individual-reply">
-              <div class="commenter-icon">
-                <a href="#"
-                  ><img
-                    src="https://yt3.ggpht.com/EOGwumQlp1mqvLr2O0qNCTl4fbPqiS0nn0tiSt8OWLbk5PLMBcXJk7yeSbXhBB2zL_RBk6yr0A=s48-c-k-c0x00ffffff-no-rj"
-                    class="commenter-icon-img" width="24px" height="24px"
-                /></a>
-              </div>
-              <div class="individual-comment-metadata">
-                <div class="username-comment-time">
-                  <a href="#" class="username-comment-time-link">
-                    <span class="username"> @pandrews9734 </span>
-                    <span class="comment-time"> 3 months ago </span>
-                  </a>
-                </div>
-                <div class="comment-text">
-                  So valid
-                </div>
-                <div class="like-dislike-reply">
-                  <div class="comment-like-and-counter">
-                    <button class="comment-like-btn">
-                      <img
-                        src="assets/images/like.png"
-                        alt="Comment Like Button"
-                      />
-                    </button>
-                    <span class="comment-like-counter"> 5</span>
-                  </div>
-                  <button class="comment-dislike-btn">
-                    <img
-                      src="assets/images/dislike.png"
-                      alt="Comment Dislike Button"
-                    />
-                  </button>
-                  <button class="comment-reply-btn">Reply</button>  
-                </div>
-              </div>
-            </article>
-            <article class="individual-reply">
-              <div class="commenter-icon">
-                <a href="#"
-                  ><img
-                    src="https://yt3.ggpht.com/GdCiBwb_apaOjk6nH8nAIU5i7dgfqL3etfWlmJMc9twQSHej6xEp0YQtg_N0PqNwSNR8VLW7=s48-c-k-c0x00ffffff-no-rj"
-                    class="commenter-icon-img" width="24px" height="24px"
-                /></a>
-              </div>
-              <div class="individual-comment-metadata">
-                <div class="username-comment-time">
-                  <a href="#" class="username-comment-time-link">
-                    <span class="username"> @jhonnycultura4455 </span>
-                    <span class="comment-time"> 3 months ago </span>
-                  </a>
-                </div>
-                <div class="comment-text">
-                  For me this is like dying.. maybe cause am depressed.. but it feels like a scene were a character sacrifices for the good of others
-                </div>
-                <div class="like-dislike-reply">
-                  <div class="comment-like-and-counter">
-                    <button class="comment-like-btn">
-                      <img
-                        src="assets/images/like.png"
-                        alt="Comment Like Button"
-                      />
-                    </button>
-                    <span class="comment-like-counter"> 17</span>
-                  </div>
-                  <button class="comment-dislike-btn">
-                    <img
-                      src="assets/images/dislike.png"
-                      alt="Comment Dislike Button"
-                    />
-                  </button>
-                  <button class="comment-reply-btn">Reply</button>
-                </div>
-              </div>
-            </article>
-            <article class="individual-reply">
-              <div class="commenter-icon">
-                <a href="#"
-                  ><img
-                    src="https://yt3.ggpht.com/eEe3m4OI9PEUD_AfaVVU5wrp0_gD70dq-1rYVdl-rP4upRJ8S5gLo1F2wstqi5AYAXwtDsMl=s48-c-k-c0x00ffffff-no-rj"
-                    class="commenter-icon-img" width="24px" height="24px"
-                /></a>
-              </div>
-              <div class="individual-comment-metadata">
-                <div class="username-comment-time">
-                  <a href="#" class="username-comment-time-link">
-                    <span class="username"> @Cookie-monkie93 </span>
-                    <span class="comment-time"> 2 months ago </span>
-                  </a>
-                </div>
-                <div class="comment-text">
-                  Wisper Kin: music actually fits in Lennox which she was about to kill herself until Angel ui saved her, and today, We Are Here To Help
-                </div>
-                <div class="like-dislike-reply">
-                  <div class="comment-like-and-counter">
-                    <button class="comment-like-btn">
-                      <img
-                        src="assets/images/like.png"
-                        alt="Comment Like Button"
-                      />
-                    </button>
-                    <span class="comment-like-counter"> 4</span>
-                  </div>
-                  <button class="comment-dislike-btn">
-                    <img
-                      src="assets/images/dislike.png"
-                      alt="Comment Dislike Button"
-                    />
-                  </button>
-                  <button class="comment-reply-btn">Reply</button>
-                </div>
-              </div>
-            </article>
+                      <div class="commenter-icon">
+                        <a href="#"
+                          ><img
+                            src="https://yt3.ggpht.com/ytc/AIf8zZSRGGRwD08jHCtVVpDtaMMVs2K1LyK_Ud_OLRg6Xw=s48-c-k-c0x00ffffff-no-rj"
+                            class="commenter-icon-img"
+                            width="24px"
+                            height="24px"
+                        /></a>
+                      </div>
+                      <div class="individual-comment-metadata">
+                        <div class="username-comment-time">
+                          <a href="#" class="username-comment-time-link">
+                            <span class="username"> @Revanchistus </span>
+                            <span class="comment-time"> 3 months ago </span>
+                          </a>
+                        </div>
+                        <div class="comment-text">
+                          Perfect capture of my emotion❤
+                        </div>
+                        <div class="like-dislike-reply">
+                          <div class="comment-like-and-counter">
+                            <button class="comment-like-btn">
+                              <img
+                                src="assets/images/like.png"
+                                alt="Comment Like Button"
+                              />
+                            </button>
+                            <span class="comment-like-counter"> 13</span>
+                          </div>
+                          <button class="comment-dislike-btn">
+                            <img
+                              src="assets/images/dislike.png"
+                              alt="Comment Dislike Button"
+                            />
+                          </button>
+                          <button class="comment-reply-btn">Reply</button>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="individual-reply">
+                      <div class="commenter-icon">
+                        <a href="#"
+                          ><img
+                            src="https://yt3.ggpht.com/EOGwumQlp1mqvLr2O0qNCTl4fbPqiS0nn0tiSt8OWLbk5PLMBcXJk7yeSbXhBB2zL_RBk6yr0A=s48-c-k-c0x00ffffff-no-rj"
+                            class="commenter-icon-img"
+                            width="24px"
+                            height="24px"
+                        /></a>
+                      </div>
+                      <div class="individual-comment-metadata">
+                        <div class="username-comment-time">
+                          <a href="#" class="username-comment-time-link">
+                            <span class="username"> @pandrews9734 </span>
+                            <span class="comment-time"> 3 months ago </span>
+                          </a>
+                        </div>
+                        <div class="comment-text">So valid</div>
+                        <div class="like-dislike-reply">
+                          <div class="comment-like-and-counter">
+                            <button class="comment-like-btn">
+                              <img
+                                src="assets/images/like.png"
+                                alt="Comment Like Button"
+                              />
+                            </button>
+                            <span class="comment-like-counter"> 5</span>
+                          </div>
+                          <button class="comment-dislike-btn">
+                            <img
+                              src="assets/images/dislike.png"
+                              alt="Comment Dislike Button"
+                            />
+                          </button>
+                          <button class="comment-reply-btn">Reply</button>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="individual-reply">
+                      <div class="commenter-icon">
+                        <a href="#"
+                          ><img
+                            src="https://yt3.ggpht.com/GdCiBwb_apaOjk6nH8nAIU5i7dgfqL3etfWlmJMc9twQSHej6xEp0YQtg_N0PqNwSNR8VLW7=s48-c-k-c0x00ffffff-no-rj"
+                            class="commenter-icon-img"
+                            width="24px"
+                            height="24px"
+                        /></a>
+                      </div>
+                      <div class="individual-comment-metadata">
+                        <div class="username-comment-time">
+                          <a href="#" class="username-comment-time-link">
+                            <span class="username"> @jhonnycultura4455 </span>
+                            <span class="comment-time"> 3 months ago </span>
+                          </a>
+                        </div>
+                        <div class="comment-text">
+                          For me this is like dying.. maybe cause am depressed..
+                          but it feels like a scene were a character sacrifices
+                          for the good of others
+                        </div>
+                        <div class="like-dislike-reply">
+                          <div class="comment-like-and-counter">
+                            <button class="comment-like-btn">
+                              <img
+                                src="assets/images/like.png"
+                                alt="Comment Like Button"
+                              />
+                            </button>
+                            <span class="comment-like-counter"> 17</span>
+                          </div>
+                          <button class="comment-dislike-btn">
+                            <img
+                              src="assets/images/dislike.png"
+                              alt="Comment Dislike Button"
+                            />
+                          </button>
+                          <button class="comment-reply-btn">Reply</button>
+                        </div>
+                      </div>
+                    </article>
+                    <article class="individual-reply">
+                      <div class="commenter-icon">
+                        <a href="#"
+                          ><img
+                            src="https://yt3.ggpht.com/eEe3m4OI9PEUD_AfaVVU5wrp0_gD70dq-1rYVdl-rP4upRJ8S5gLo1F2wstqi5AYAXwtDsMl=s48-c-k-c0x00ffffff-no-rj"
+                            class="commenter-icon-img"
+                            width="24px"
+                            height="24px"
+                        /></a>
+                      </div>
+                      <div class="individual-comment-metadata">
+                        <div class="username-comment-time">
+                          <a href="#" class="username-comment-time-link">
+                            <span class="username"> @Cookie-monkie93 </span>
+                            <span class="comment-time"> 2 months ago </span>
+                          </a>
+                        </div>
+                        <div class="comment-text">
+                          Wisper Kin: music actually fits in Lennox which she
+                          was about to kill herself until Angel ui saved her,
+                          and today, We Are Here To Help
+                        </div>
+                        <div class="like-dislike-reply">
+                          <div class="comment-like-and-counter">
+                            <button class="comment-like-btn">
+                              <img
+                                src="assets/images/like.png"
+                                alt="Comment Like Button"
+                              />
+                            </button>
+                            <span class="comment-like-counter"> 4</span>
+                          </div>
+                          <button class="comment-dislike-btn">
+                            <img
+                              src="assets/images/dislike.png"
+                              alt="Comment Dislike Button"
+                            />
+                          </button>
+                          <button class="comment-reply-btn">Reply</button>
+                        </div>
+                      </div>
+                    </article>
                   </div>
                 </div>
               </div>
@@ -836,7 +899,9 @@
                 <div class="username-comment-time">
                   <a href="#" class="username-comment-time-link">
                     <span class="username"> @laivuro </span>
-                    <span class="comment-time"> <span class="comment-time-number">5</span> months ago </span>
+                    <span class="comment-time">
+                      <span class="comment-time-number">5</span> months ago
+                    </span>
                   </a>
                 </div>
                 <div class="comment-text">
@@ -886,17 +951,23 @@
                 <div class="username-comment-time">
                   <a href="#" class="username-comment-time-link">
                     <span class="username"> @ricefields4547 </span>
-                    <span class="comment-time"> <span class="comment-time-number">3</span> months ago </span>
+                    <span class="comment-time">
+                      <span class="comment-time-number">3</span> months ago
+                    </span>
                   </a>
                 </div>
                 <div class="comment-text">
-                  “And God,<br>
-please let the deer on the highway<br>
-get some kind of heaven.<br>
-Something with tall soft grass and sweet reunion.<br>
-Let the moths in porch lights go some place with a thousand suns, that taste like sugar<br> and get swallowed whole.<br>
-May the mice in oil and glue have forever dry, warm fur and full bellies.<br>
-If I am killed for simply living, let death be kinder than man.”<br>
+                  “And God,<br />
+                  please let the deer on the highway<br />
+                  get some kind of heaven.<br />
+                  Something with tall soft grass and sweet reunion.<br />
+                  Let the moths in porch lights go some place with a thousand
+                  suns, that taste like sugar<br />
+                  and get swallowed whole.<br />
+                  May the mice in oil and glue have forever dry, warm fur and
+                  full bellies.<br />
+                  If I am killed for simply living, let death be kinder than
+                  man.”<br />
                 </div>
                 <div class="like-dislike-reply">
                   <div class="comment-like-and-counter">
@@ -941,11 +1012,14 @@ If I am killed for simply living, let death be kinder than man.”<br>
                 <div class="username-comment-time">
                   <a href="#" class="username-comment-time-link">
                     <span class="username"> madamsmols4359 </span>
-                    <span class="comment-time"> <span class="comment-time-number">1</span> month ago </span>
+                    <span class="comment-time">
+                      <span class="comment-time-number">1</span> month ago
+                    </span>
                   </a>
                 </div>
                 <div class="comment-text">
-                  I can't tell if this song makes me feel happy with where I am in life now or is making me wish I could go back 😭
+                  I can't tell if this song makes me feel happy with where I am
+                  in life now or is making me wish I could go back 😭
                 </div>
                 <div class="like-dislike-reply">
                   <div class="comment-like-and-counter">
@@ -1033,12 +1107,12 @@ If I am killed for simply living, let death be kinder than man.”<br>
       <div class="recommended-videos">
         <div class="categories">
           <button class="category active" id="allCategory">All</button>
-          <button class="category" id="emileCategory">From Emile Mosseri-Topic</button>
+          <button class="category" id="emileCategory">
+            From Emile Mosseri-Topic
+          </button>
           <button class="category" id="relatedCategory">Related</button>
         </div>
-        <div class="video-card-display" id="videoCardDisplay">
-
-        </div>
+        <div class="video-card-display" id="videoCardDisplay"></div>
       </div>
     </main>
   </body>
